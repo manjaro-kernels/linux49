@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: test ssh
         shell: bash
-        run |
+        run: |
           host=${{ secrets.BOXIT_HOST }}
           echo $host
           target=${{ secrets.BOXIT_TARGET }}
