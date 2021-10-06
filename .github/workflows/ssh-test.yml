@@ -1,0 +1,17 @@
+name: test ssh
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-ssh:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: test ssh
+        shell: bash
+        run |
+          host=${{ secrets.BOXIT_HOST }}
+          echo $host
+          target=${{ secrets.BOXIT_TARGET }}
+          echo $target
+          ssh-keyscan -t rsa $host
